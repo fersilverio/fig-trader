@@ -1,24 +1,30 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Faça login</h5>
-                        <form>
-                            <div class="form-group">
-                                <label for="email">Endereço de e-mail</label>
-                                <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
-                            </div>
-                            <div class="form-group">
-                                <label for="senha">Senha</label>
-                                <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Entrar</button>
-                        </form>
-                    </div>
+    <div style="display: flex; flex-direction: row; justify-content: center;">
+        <div class="container_custom_area">
+            <div class="col-md-10">
+                <div style="margin-bottom: 10px;">
+                    <h1>Login</h1>
+                    <form>
+                        <div class="form-group">
+                            <label class="py-3" for="email">E-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha" class="py-3">Senha</label>
+                            <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
+                        </div>
+                        <p class="py-3">Esqueceu a senha?</p>
+                        <div class="a">
+
+                            <button type="submit" class="btn btn-primary button-custom">Entrar</button>
+                            <button type="submit" class="btn btn-secondary button-custom">Limpar</button>
+
+
+                        </div>
+                    </form>
                 </div>
             </div>
+
         </div>
     </div>
 </template>
@@ -36,9 +42,25 @@ export default {
 
 .container_custom_area {
     margin-top: 10vh;
-    width: 50vh;
     height: 50vh;
-    border-radius: 8%;
+    border-radius: 2.5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 50vh;
+    border: 1px solid black;
+
+
+}
+
+.button-custom {
+    margin-right: 10px;
+}
+
+.a {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 
 .form-area {
