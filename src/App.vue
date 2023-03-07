@@ -1,8 +1,5 @@
 <template>
   <Navbar />
-  <Login />
-
-
   <router-view />
 </template>
 <script>

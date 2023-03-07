@@ -13,7 +13,7 @@
                             <label for="senha" class="py-3">Senha</label>
                             <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
                         </div>
-                        <p class="py-3">Esqueceu a senha?</p>
+                        <a href=""><p class="py-3">Esqueceu a senha?</p></a>
                         <div class="a">
 
                             <button type="submit" class="btn btn-primary button-custom">Entrar</button>
@@ -42,7 +42,7 @@ export default {
 
 .container_custom_area {
     margin-top: 10vh;
-    height: 50vh;
+    height: 43vh;
     border-radius: 2.5%;
     display: flex;
     flex-direction: row;
