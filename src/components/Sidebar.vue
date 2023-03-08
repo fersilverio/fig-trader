@@ -16,7 +16,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .custom-nav:hover {
     background-color: rgba(45, 22, 197, 0.869);

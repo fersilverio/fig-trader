@@ -1,5 +1,14 @@
 <template>
-    <Sidebar />
+    <div class="row">
+        <div class="">
+
+        </div>
+        <div class="">
+            <Sidebar />
+        </div>
+            
+    </div>
+    
 </template>
 
 <script>
