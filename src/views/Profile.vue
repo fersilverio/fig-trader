@@ -1,9 +1,9 @@
 <template>
     <div class="row">
-        <div class="">
-
+        <div class="col offset-md" style="background-color: red;">
+            aaaaa
         </div>
-        <div class="">
+        <div class="col-md-2">
             <Sidebar />
         </div>
             

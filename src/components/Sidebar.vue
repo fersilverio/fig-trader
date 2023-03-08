@@ -1,6 +1,6 @@
 <template>
     <div class="row component-core">
-        <div class="col-md-2" style="height: 100%;">
+        <div style="height: 100%;">
             <div class="side-core">
                 <a class="nav-link custom-nav p-3 custom-navlink-positioning">Resumo</a>
                 <a class="nav-link custom-nav p-3 custom-navlink-positioning">Amigos</a>
