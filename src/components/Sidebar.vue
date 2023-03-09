@@ -2,9 +2,9 @@
     <div class="row component-core">
         <div style="height: 100%;">
             <div class="side-core">
-                <a class="nav-link custom-nav p-3 custom-navlink-positioning">Resumo</a>
-                <a class="nav-link custom-nav p-3 custom-navlink-positioning">Amigos</a>
-                <a class="nav-link custom-nav p-3 custom-navlink-positioning">Cartas</a>
+                <a @click="emitChoice(1)" class="nav-link custom-nav p-3 custom-navlink-positioning">Resumo</a>
+                <a @click="emitChoice(2)" class="nav-link custom-nav p-3 custom-navlink-positioning">Amigos</a>
+                <a @click="emitChoice(3)" class="nav-link custom-nav p-3 custom-navlink-positioning">Cartas</a>
             </div>
         </div>
     </div>
@@ -12,7 +12,22 @@
 
 <script>
 export default {
-    name: 'Sidebar'
+    name: 'Sidebar',
+
+    data(){
+        return{
+            option: 0
+        }
+    },
+
+    methods: {
+        emitChoice(choice) {
+            this.option = choice
+            let toBeSent = this.option
+            this.$emit('sidebar-choice', toBeSent)
+        }
+    }
+
 }
 </script>
 
@@ -25,6 +40,7 @@ export default {
     border-radius: 0.375rem;
     color: white;
     font-weight: bold;
+    transition: none;
 }
 
 .custom-nav {
