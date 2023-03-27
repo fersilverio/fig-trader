@@ -48,8 +48,8 @@ export default {
     },
 
     created() {
-        let email = "fernando2@teste.com"
-        let password = '12312312321312312323'
+        let email = "fernando@a.com"
+        let password = '123456'
         //console.log(this.$store.getters.)
         axios.post('http://localhost:3000/auth/login', { email, password }).then((res) => {
                 console.log('waw')
