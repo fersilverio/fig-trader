@@ -7,16 +7,20 @@
                     <form>
                         <div class="form-group">
                             <label class="py-3" for="email">E-mail</label>
-                            <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
+                            <input v-model="email" type="email" class="form-control" id="email"
+                                placeholder="Digite seu e-mail">
                         </div>
                         <div class="form-group">
                             <label for="senha" class="py-3">Senha</label>
-                            <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
+                            <input v-model="password" type="password" class="form-control" id="senha"
+                                placeholder="Digite sua senha">
                         </div>
-                        <a href=""><p class="py-3">Esqueceu a senha?</p></a>
+                        <a href="">
+                            <p class="py-3">Esqueceu a senha?</p>
+                        </a>
                         <div class="a">
 
-                            <button type="submit" class="btn btn-primary button-custom">Entrar</button>
+                            <button @click="login" type="submit" class="btn btn-primary button-custom">Entrar</button>
                             <button type="submit" class="btn btn-secondary button-custom">Limpar</button>
 
 
@@ -30,8 +34,43 @@
 </template>
 
 <script>
+
+import store from '@/store'
+import axios from 'axios'
 export default {
-    name: 'Login'
+    name: 'Login',
+
+    data() {
+        return {
+            //email: "fernando2@teste.com",
+            //password: "12313231232131232132131"
+        }
+    },
+
+    created() {
+        let email = "fernando2@teste.com"
+        let password = '12312312321312312323'
+        //console.log(this.$store.getters.)
+        axios.post('http://localhost:3000/auth/login', { email, password }).then((res) => {
+                console.log('waw')
+                console.log(res)
+            }).catch((err) => {
+                alert(err)
+                console.error(err)
+            })
+    },
+
+    methods: {
+        login() {
+
+            //console.log(this.email, this.password)
+            
+            // store.dispatch('login', true/*{ email: this.email, password: this.password }*/)
+            //     .then(() => {
+            //         this.$router.push({ name: '/' })
+            //     })
+        }
+    }
 }
 </script>
 
