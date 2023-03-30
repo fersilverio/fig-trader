@@ -1,4 +1,4 @@
-# fig-trader-v2
+# fig-trade
 
 ## Project setup
 ```

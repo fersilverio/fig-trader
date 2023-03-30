@@ -1,5 +1,3 @@
-
-
 <template>
     <div style="display: grid;">
 
@@ -32,12 +30,10 @@
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue"
-
-export default defineComponent({
+<script>
+export default {
     name: 'Card'
-})
+}
 </script>
 
 <style></style>
