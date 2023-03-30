@@ -17,15 +17,16 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import Card from '@/components/Card.vue';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
     name: 'Deck',
     components: {
         Card
     }
-}
+})
 </script>
 
 <style></style>

@@ -10,25 +10,29 @@
     </div>
 </template>
 
-<script>
-export default {
+
+<script lang="ts">
+import { defineComponent, ref } from "vue";
+
+export default defineComponent({
     name: 'Sidebar',
+    emits: ['sidebar-choice'],
+    setup(props, {emit}){
+        const option = ref(1)
 
-    data(){
-        return{
-            option: 0
+        const emitChoice = (choice: number) => {
+            option.value = choice
+            let toBeSent = option.value
+            emit('sidebar-choice', toBeSent)
+            
         }
-    },
 
-    methods: {
-        emitChoice(choice) {
-            this.option = choice
-            let toBeSent = this.option
-            this.$emit('sidebar-choice', toBeSent)
+        return {
+            option,
+            emitChoice
         }
     }
-
-}
+})
 </script>
 
 <style scoped>

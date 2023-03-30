@@ -15,18 +15,20 @@
 
         </div>
         <div class="col-md-2">
-            <Sidebar @sidebar-choice="listenOptionEvent"/>
+            <Sidebar @sidebar-choice="listenOptionEvent" />
         </div>
     </div>
 </template>
 
-<script>
+<script lang="ts">
+
+import { defineComponent, ref } from "vue"
 import Sidebar from '@/components/Sidebar.vue'
 import Dashboard from '@/components/Dashboard.vue'
 import Friends from '@/components/Friends.vue'
 import Deck from '@/components/Deck.vue'
 
-export default {
+export default defineComponent({
     name: 'Profile',
     components: {
         Sidebar,
@@ -35,24 +37,14 @@ export default {
         Deck
     },
 
-    data() {
-        return {
-            renderOption: 1
-        }
-    },
-
-    methods: {
-        listenOptionEvent(option) {
-            this.renderOption = option
+    setup(){
+        const renderOption = ref(1)
+        const listenOptionEvent = (option: number) => {
+            renderOption.value = option
         }
 
-    },
-
-
-    setup() {
-
+        return {renderOption, listenOptionEvent}
     }
-}
-</script>
 
-<style></style>
+})
+</script>
