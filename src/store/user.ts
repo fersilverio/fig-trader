@@ -3,7 +3,9 @@ import axios from 'axios'
 
 export const useUserStore = defineStore("user", {
     state: () => ({
-        accessToken: null
+        accessToken: null,
+        userId: null,
+        userName: ""
     }),
 
     actions: {
@@ -14,6 +16,9 @@ export const useUserStore = defineStore("user", {
             })
 
             this.accessToken = response.data.accessToken
+            this.userId = response.data.userId
+            this.userName = response.data.userName
+            
         }
     },
 

@@ -9,7 +9,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
-    meta: {requireAuth: true},
+    meta: { requireAuth: true },
     component: Home
   },
   {
@@ -20,7 +20,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/profile',
     name: 'profile',
-    meta: {requireAuth: true},
+    meta: { requireAuth: true },
     component: Profile
   }
 ]
@@ -30,15 +30,17 @@ const router = createRouter({
   routes
 })
 
-router.beforeEach((to) => {
+router.beforeEach((to, from) => {
   const userStore = useUserStore()
-  
-  if(to.meta.requireAuth) {
-    if(!userStore.isAuthenticated) {
-      return '/login'
+  console.log('from: ', from.name)
+  console.log('to: ', to.name)
+
+  if (to.meta.requireAuth) {
+    if (!userStore.isAuthenticated) {
+      return { path: '/login' }
     }
   }
-  
+
 })
 
 export default router
