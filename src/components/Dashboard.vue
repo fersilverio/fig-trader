@@ -7,7 +7,9 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue"
 import axios from 'axios'
+import jwtDecode from 'jwt-decode'
 import { useUserStore } from "@/store/user"
+import Cookies from "js-cookie"
 
 export default defineComponent({
     name: 'Dashboard',
@@ -24,7 +26,13 @@ export default defineComponent({
         const creationDate = ref('')
 
         const getProfile = async () => {
-            let userId = userStore.userId
+            const token = Cookies.get('accessToken')
+            let userId
+            
+            if (token) {
+                const payload: any = jwtDecode(token)
+                userId = payload.id                
+            }
 
             const profileInfo: any = await axios.get(`http://localhost:3000/users/get-profile/${userId}`, {
                 headers: {
