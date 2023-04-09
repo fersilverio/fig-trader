@@ -15,7 +15,9 @@
                         <router-link to="/profile" class="nav-link active" aria-current="page"
                             href="#">Profile</router-link>
                     </li>
-
+                    <li class="nav-item">
+                        <a  @click="logout" class="nav-link active" aria-current="page" href="#">Logout</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -24,9 +26,23 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useUserStore } from "@/store/user"
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
     name: 'Navbar',
+
+    setup(){
+        const userStore = useUserStore()
+        const router = useRouter()
+        
+        const logout = () => {
+            userStore.signOut()
+            router.push('/login')    
+        }
+
+        return { logout }
+    }
 })
 </script>
 
