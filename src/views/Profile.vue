@@ -1,8 +1,8 @@
 <template>
-    <div>
-        <Navbar/>
+    <div class="fundo">
+        <Navbar />
         <div class="row">
-            <div class="col offset-md" style="background-color: red;">
+            <div class="col offset-md" style="">
                 <div>
                     <div v-if="renderOption == 1">
                         <Dashboard />
@@ -34,21 +34,27 @@ import Navbar from "@/components/Navbar.vue"
 export default defineComponent({
     name: 'Profile',
     components: {
-    Sidebar,
-    Dashboard,
-    Friends,
-    Deck,
-    Navbar
-},
+        Sidebar,
+        Dashboard,
+        Friends,
+        Deck,
+        Navbar
+    },
 
-    setup(){
+    setup() {
         const renderOption = ref(1)
         const listenOptionEvent = (option: number) => {
             renderOption.value = option
         }
 
-        return {renderOption, listenOptionEvent}
+        return { renderOption, listenOptionEvent }
     }
 
 })
 </script>
+
+<style>
+.fundo {
+    background-color: rgb(248, 248, 248);
+}
+</style>

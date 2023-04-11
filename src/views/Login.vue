@@ -59,9 +59,9 @@ export default defineComponent({
 </script>
 
 <style>
-.fundo_teste {
+/* .fundo_teste {
     background-color: red;
-}
+} */
 
 .container_custom_area {
     margin-top: 10vh;

@@ -1,14 +1,14 @@
 <template>
-    <div class="container-fluid" style="margin: 20px;">
-        
-        <div class="row" style="background-color: blue;">
+    <div class="container-fluid fundo" style="margin-top: 15vh;">
+
+        <div class="row" style="">
             <div class="col-md-3">
                 <div class="card" style="width: 18rem; margin-bottom: 10px;">
-                    <img src="@/assets/GuardiaoCelta.jpg" class="card-img-top" alt="">
+                    <img src="@/assets/barkeep_carlfrankdotcom_by_seeeffeye_d95gy6k-fullview.jpg" class="card-img-top"
+                        alt="">
                     <div class="card-body">
                         <h5 class="card-title">Fernando S. Silvério</h5>
                         <h6 class="card-subtitle mb-2 text-muted">@questbarman</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
                 </div>
             </div>
@@ -29,45 +29,47 @@
                         </tr>
                     </tbody>
                 </table>
-                <div class="row" style="display: flex; flex-direction: row; justify-content: space-evenly;">
+                <div class="row" style="display: flex; flex-direction: row; justify-content: space-between;">
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up the bulk of the card's
+                                content. <br>
+                                Some quick example text to build on the card title and make up the bulk of the card's
+                                content.
+                            </p>
                         </div>
                     </div>
 
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
+                            <figure class="figure">
+                                <img src="@/assets/desenhos-de-escudos-2-3.jpg"
+                                    class="figure-img img-fluid rounded" alt="...">
+                                <figcaption class="figure-caption">A caption for the above image.</figcaption>
+                            </figure>
                         </div>
                     </div>
 
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up the bulk of the card's
+                                content. <br>
+                                Some quick example text to build on the card title and make up the bulk of the card's
+                                content.
+                            </p>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
-        
-        
-        
-        
-        
+
+
+
+
+
     </div>
 </template>
 
@@ -95,10 +97,10 @@ export default defineComponent({
         const getProfile = async () => {
             const token = Cookies.get('accessToken')
             let userId
-            
+
             if (token) {
                 const payload: any = jwtDecode(token)
-                userId = payload.id                
+                userId = payload.id
             }
 
             const profileInfo: any = await axios.get(`http://localhost:3000/users/get-profile/${userId}`, {
@@ -117,4 +119,8 @@ export default defineComponent({
 })
 </script>
 
-<style></style>
+<style>
+.fundo {
+    background-color: rgb(248, 248, 248);
+}
+</style>
