@@ -8,7 +8,7 @@
                         <Dashboard />
                     </div>
                     <div v-else-if="renderOption == 2">
-                        <Friends />
+                        <Slider />
                     </div>
                     <div v-else>
                         <Deck />
@@ -27,19 +27,21 @@
 import { defineComponent, ref } from "vue"
 import Sidebar from '@/components/Sidebar.vue'
 import Dashboard from '@/components/Dashboard.vue'
-import Friends from '@/components/Friends.vue'
+import Friends from '@/components/Friends/Friends.vue'
 import Deck from '@/components/Deck.vue'
 import Navbar from "@/components/Navbar.vue"
+import Slider from "@/components/Friends/Slider.vue"
 
 export default defineComponent({
     name: 'Profile',
     components: {
-        Sidebar,
-        Dashboard,
-        Friends,
-        Deck,
-        Navbar
-    },
+    Sidebar,
+    Dashboard,
+    Friends,
+    Deck,
+    Navbar,
+    Slider
+},
 
     setup() {
         const renderOption = ref(1)

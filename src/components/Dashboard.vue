@@ -7,8 +7,8 @@
                     <img src="@/assets/barkeep_carlfrankdotcom_by_seeeffeye_d95gy6k-fullview.jpg" class="card-img-top"
                         alt="">
                     <div class="card-body">
-                        <h5 class="card-title">Fernando S. Silvério</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">@questbarman</h6>
+                        <h5 class="card-title">{{ name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">@{{ nickName }}</h6>
                     </div>
                 </div>
             </div>
@@ -44,8 +44,8 @@
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <figure class="figure">
-                                <img src="@/assets/desenhos-de-escudos-2-3.jpg"
-                                    class="figure-img img-fluid rounded" alt="...">
+                                <img src="@/assets/desenhos-de-escudos-2-3.jpg" class="figure-img img-fluid rounded"
+                                    alt="...">
                                 <figcaption class="figure-caption">A caption for the above image.</figcaption>
                             </figure>
                         </div>
@@ -79,6 +79,7 @@ import axios from 'axios'
 import jwtDecode from 'jwt-decode'
 import { useUserStore } from "@/store/user"
 import Cookies from "js-cookie"
+import * as dayjs from 'dayjs'
 
 export default defineComponent({
     name: 'Dashboard',
@@ -93,6 +94,7 @@ export default defineComponent({
         const name = ref('')
         const email = ref('')
         const creationDate = ref('')
+        const nickName = ref('')
 
         const getProfile = async () => {
             const token = Cookies.get('accessToken')
@@ -109,12 +111,15 @@ export default defineComponent({
                 }
             })
 
-            name.value = profileInfo.data.userName
-            email.value = profileInfo.data.userEmail
-            creationDate.value = profileInfo.data.creationDate
+            console.log(profileInfo)
+
+            name.value = profileInfo.data.name
+            email.value = profileInfo.data.email
+            creationDate.value = profileInfo.data.createdAt
+            nickName.value = profileInfo.data.nickName
         }
 
-        return { name, email, creationDate, getProfile }
+        return { name, email, creationDate, nickName, getProfile }
     }
 })
 </script>

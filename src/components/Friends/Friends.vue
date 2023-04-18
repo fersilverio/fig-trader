@@ -1,21 +1,23 @@
 <template>
-    <div class="container" style=" background-color: red;">
+    <div class="" style="">
         <FriendCard />
+        <!-- <FriendCard />
         <FriendCard />
-        <FriendCard />
-        <FriendCard />
+        <FriendCard /> -->
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue"
-import FriendCard from "./FriendCard.vue"
+import FriendCard from "@/components/Friends/FriendCard.vue"
+import Slider from "@/components/Friends/Slider.vue"
 
 
 export default defineComponent({
     name: 'Friends',
     components: {
-        FriendCard
+        FriendCard,
+        Slider
 
     }
 })
@@ -29,6 +31,6 @@ export default defineComponent({
     gap: 20px;
     width: 100%;
     height: 100%;
-    background-color: red;
+    /* background-color: red; */
 }
 </style>
