@@ -8,7 +8,7 @@
                         <Dashboard />
                     </div>
                     <div v-else-if="renderOption == 2">
-                        <Slider />
+                        <Friends />
                     </div>
                     <div v-else>
                         <Deck />

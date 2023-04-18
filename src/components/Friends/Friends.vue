@@ -1,9 +1,33 @@
 <template>
-    <div class="" style="">
-        <FriendCard />
-        <!-- <FriendCard />
-        <FriendCard />
-        <FriendCard /> -->
+    <div class="container" style="display: flex; flex-direction: column; align-self: center;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <h1>AMIGOS</h1>
+        </div>
+        <div class="container-grid" style="margin-top: 20px;">
+
+            <div class="" style="display: flex; flex-direction: column; align-items: center;">
+                <FriendCard />
+            </div>
+
+            <div class="" style="display: flex; flex-direction: column; align-items: center;">
+                <FriendCard />
+            </div>
+
+            <div class="" style="display: flex; flex-direction: column; align-items: center;">
+                <FriendCard />
+            </div>
+
+            <div class="" style="display: flex; flex-direction: column; align-items: center;">
+                <FriendCard />
+            </div>
+            <div class="" style="display: flex; flex-direction: column; align-items: center;">
+                <FriendCard />
+            </div>
+            <div class="" style="display: flex; flex-direction: column; align-items: center;">
+                <FriendCard />
+            </div>
+
+        </div>
     </div>
 </template>
 
@@ -24,13 +48,10 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.container {
+.container-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 20px;
-    width: 100%;
-    height: 100%;
-    /* background-color: red; */
 }
 </style>
